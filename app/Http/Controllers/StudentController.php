@@ -25,7 +25,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        return view('studentdata');
     }
 
     /**
@@ -36,7 +36,23 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'course' => 'required',
+            'address' => 'required',
+            'mobile' => 'required',
+        ]);
+
+        $students = new student();
+
+        $students->name = $request->input('name');
+        $students->course = $request->input('course');
+        $students->address = $request->input('address');
+        $students->mobile = $request->input('mobile');
+
+        $students->save();
+
+        return redirect('/students')->with('success','Student Data Saved');
     }
 
     /**

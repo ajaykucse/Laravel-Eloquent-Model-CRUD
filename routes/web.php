@@ -15,3 +15,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/students','StudentController@index');
+Route::get('/insert-data','StudentController@create');
+Route::post('/add','StudentController@store');
