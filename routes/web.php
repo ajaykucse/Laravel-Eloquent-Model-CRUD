@@ -17,3 +17,4 @@ Route::get('/', function () {
 Route::get('/students','StudentController@index');
 Route::get('/insert-data','StudentController@create');
 Route::post('/add','StudentController@store');
+Route::get('/delete-data/{id}','StudentController@destroy');

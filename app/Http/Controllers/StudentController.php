@@ -52,7 +52,7 @@ class StudentController extends Controller
 
         $students->save();
 
-        return redirect('/students')->with('success','Student Data Saved');
+        return redirect('/students')->with('success','Student Data Saved successfully!');
     }
 
     /**
@@ -97,6 +97,9 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $students = student::find($id);
+        $students->delete();
+
+        return redirect('/students')->with('success','student data deleted successfully!!');
     }
 }

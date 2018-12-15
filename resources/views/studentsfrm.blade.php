@@ -32,7 +32,7 @@
 					<p>{{ \Session::get('success')}}</p>
 				</div>
 				@endif
-				
+
 			    <div class="row">
 			    	<div class="col-md-12 text-right">
 			    		<a href="/insert-data" class="btn btn-success badge-pill" style="width: 80px;"> ADD</a>
@@ -61,7 +61,7 @@
 							
 							<td class="text-right">
 								<a href="/students/$student->id" class="btn btn-primary badge-pill">Edit</a>
-								<a href="/students/{$student->id}" class="btn btn-danger badge-pill"> Delete</a>
+								<a href="/delete-data/{{ $student->id }}" class="btn btn-danger badge-pill"> Delete</a>
 							</td>
 						</tr>
 						@endforeach
