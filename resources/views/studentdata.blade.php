@@ -33,8 +33,8 @@
 					<input type="text" class="form-control" name="mobile" placeholder="Enter Mobile Number">
 				</div>
 				<div class="modal-footer">
-					<a href="" type="button" class="btn btn-secondary">Close</a>
 					<button type="submit" name="submit" class="btn btn-primary">Save</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				</div>
 			</form>
 		</div>

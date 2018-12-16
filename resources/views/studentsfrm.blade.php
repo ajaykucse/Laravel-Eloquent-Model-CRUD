@@ -60,7 +60,7 @@
 							<td>{{ $student->mobile}}</td>
 							
 							<td class="text-right">
-								<a href="/students/$student->id" class="btn btn-primary badge-pill">Edit</a>
+								<a href="/edit-data/{{ $student->id}} " class="btn btn-primary badge-pill">Edit</a>
 								<a href="/delete-data/{{ $student->id }}" class="btn btn-danger badge-pill"> Delete</a>
 							</td>
 						</tr>

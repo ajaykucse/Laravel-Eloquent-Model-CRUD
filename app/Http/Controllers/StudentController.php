@@ -63,7 +63,7 @@ class StudentController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -74,7 +74,8 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $students = student::find($id);
+        return view('student_edit',compact('students', $id));
     }
 
     /**
@@ -86,7 +87,23 @@ class StudentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'course' => 'required',
+            'address' => 'required',
+            'mobile' => 'required',
+        ]);
+
+        $student = student::find($id);
+
+        $student->name = $request->input('name');
+        $student->course = $request->input('course');
+        $student->address = $request->input('address');
+        $student->mobile = $request->input('mobile');
+
+        $student->save();
+
+        return redirect('/students')->with('success','Data Updated successfully!!!');
     }
 
     /**
